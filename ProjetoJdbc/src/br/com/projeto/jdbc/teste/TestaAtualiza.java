@@ -5,21 +5,22 @@ import java.util.Calendar;
 import br.com.projeto.jdbc.dao.ContatoDao;
 import br.com.projeto.jdbc.modelo.Contato;
 
-public class TestaInsere {
+public class TestaAtualiza {
 
 	public static void main(String[] args) {
 		
 		Contato contato = new Contato();
 		
-		contato.setNome("Edineide");
-		contato.setEmail("edneide@hotmail.com");
-		contato.setEndereco("R.aonde o vento faz a curva");
+		contato.setId((long) 3);
+		contato.setNome("Batman");
+		contato.setEmail("batman@gotham.com");
+		contato.setEndereco("Gotham City");
 		contato.setDataNascimento(Calendar.getInstance());
 		
-		ContatoDao contatoDao = new ContatoDao();
+		ContatoDao dao = new ContatoDao();
 		
-		contatoDao.adiciona(contato);
+		dao.altera(contato);
 		
-		System.out.println("Contato Salvo!");
+		System.out.println("Contato Atualizado! ");
 	}
 }
